@@ -1,0 +1,6 @@
+{
+    "github.copilot.enable": {
+        "workspace": false
+    },
+    "github.copilot.editor.enableAutoCompletions": false
+}
