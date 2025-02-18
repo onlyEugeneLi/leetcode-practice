@@ -7,11 +7,13 @@ class Solution:
         zeros = 0
         ans = 0
 
-        # Rules on when to move left and right pointer.
+        # Rules on when to move left and right pointer
+        # Move **right pointer** as reference
         for right in range(n):
             if nums[right] == 0:
                 zeros += 1
-            
+            # Maintain at most one 0 in the window
+            # Keep moving **left pointer** until there's only one 0
             while zeros > 1:
                 if nums[left] == 0:
                     zeros -= 1
