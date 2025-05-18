@@ -38,32 +38,17 @@ class Solution:
                     if parent.right:
                         bfs_list.append([parent.right, 'R', 1])
         return zigzag_length
-    
-    def longestZigZag_dfs_1(self, root: Optional[TreeNode]) -> int:
-        '''
-        DFS method
-        Recursive function
-        '''
-        def dfs(node: TreeNode, left_len: int, right_len: int, max_len: int) -> int:
-            if not node:
-                return max_len
-            max_len = max(max_len, left_len, right_len)
-            return max(
-                dfs(node.left, 0, left_len + 1, max_len),
-                dfs(node.right, right_len + 1, 0, max_len),
-            )
-        return dfs(root, 0, 0, 0)
 
-    def longestZigZag_dfs_2(self, root: Optional[TreeNode]) -> int:
+    def longestZigZag_dfs(self, root: Optional[TreeNode]) -> int:
         # Helper function for DFS traversal
-        def dfs(node, curLen, goLeft): 
+        def dfs(node, currLen, decide_next_go_left): 
             '''
             ### Solution link ###
             https://leetcode.com/problems/longest-zigzag-path-in-a-binary-tree/solutions/6180389/easy-o-n-dfs-python-solution-dfs-direction-toggling
 
             ### Parameters ###
 
-            goLeft: next step direction signal, gives sign on previous step direction 
+            decide_next_go_left: next step direction signal, gives sign on previous step direction 
                 - True (go left now): last step was RIGHT
                 - False (go right now): last step was LEFT
 
@@ -72,14 +57,14 @@ class Solution:
             node: current node
             '''
             if not node:
-                return curLen 
+                return currLen 
             
-            if goLeft:
+            if decide_next_go_left:
                 # If moving left, increment length and toggle to right; reset length if moving right
-                return max(dfs(node.left, curLen + 1, False), dfs(node.right, 0, True))
+                return max(dfs(node.left, currLen + 1, False), dfs(node.right, 0, True))
             else: # This step goes RIGHT, because last step was LEFT
                 # If moving right, increment length and toggle to left; reset length if moving left
-                return max(dfs(node.left, 0, False), dfs(node.right, curLen + 1, True))
+                return max(dfs(node.left, 0, False), dfs(node.right, currLen + 1, True))
 
         # Start DFS from both left and right subtrees of the root, toggling directions
         return max(dfs(root.left, 0, False), dfs(root.right, 0, True))
@@ -105,4 +90,4 @@ root.right.left = TreeNode()
 # YES: solution = Solution()
 # NO: Solution.longestZigZag(root) # TypeError
 
-print(Solution().longestZigZag_dfs_2(root=root))
+print(Solution().longestZigZag_dfs(root=root))
