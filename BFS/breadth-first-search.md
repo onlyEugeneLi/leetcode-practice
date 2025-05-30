@@ -1,5 +1,20 @@
 # Breath First Search
 
+BFS can track distance implicitly by grouping all nodes of the same depth (given by the length of the queue) into a single while iteration.
+
+```
+...
+queue = deque([(x0, y0)])
+maze[x0][y0] = "+"
+distance = 0
+
+while queue:
+    distance += 1
+    for _ in range(len(queue)):
+        x, y = queue.popleft()
+        ...
+```
+
 ## Python Implementation
 
 Tree defined in dictionary
