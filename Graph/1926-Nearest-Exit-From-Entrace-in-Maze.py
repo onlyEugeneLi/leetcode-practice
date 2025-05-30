@@ -4,6 +4,8 @@ from collections import deque
 class Solution:
     def nearestExit(self, maze: List[List[str]], entrance: List[int]) -> int:
         '''
+        Intitial intuition (not used in the solution)
+
         ##### Moves #####
 
         Up: maze[i - 1][j]
