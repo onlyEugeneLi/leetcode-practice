@@ -17,6 +17,7 @@ class Solution:
     def singleNumber(self, nums: list[int]) -> int:
         xor = 0
         for n in nums:
+            # Two same numbers cancel out each out, only the single number will be retained by XOR operation
             xor = xor ^ n
 
         return xor
