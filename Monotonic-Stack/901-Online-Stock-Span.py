@@ -50,6 +50,7 @@ class StockSpanner:
     def next(self, price: int) -> int:
         # Pop elements from stack while current price is greater or equal
         while self.stack and self.stack[-1][0] <= price:
+            # Only keep the prices that are greater than the current price
             self.stack.pop()
         
         # Compute span
