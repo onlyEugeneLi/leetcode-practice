@@ -7,7 +7,7 @@ class ListNode:
 
 class Solution_merge_sort:
     def sortList(self, head: Optional[ListNode]) -> Optional[ListNode]:
-        # Base case
+        # Base case: empyt or single element linked list
         if head is None or head.next is None:
             return head
         
