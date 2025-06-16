@@ -18,8 +18,8 @@ class Solution_merge_sort:
             while fast and fast.next:
                 slow = slow.next
                 fast = fast.next.next
-            # When fast node reaches the end, slow node is half way to the end
-            mid = slow.next
+            # When fast node reaches the end, slow points at the end of first half
+            mid = slow.next # Mid node is the start of the second half
             slow.next = None # Break up the link
             return node, mid
 
