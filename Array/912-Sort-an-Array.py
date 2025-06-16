@@ -57,7 +57,7 @@ class Solution_quick_sort:
         '''
         pivot = nums[randint(0, len(nums) - 1)]  
         
-
+        # Sorting and partitioning
         less = [n for n in nums if n < pivot]
         equal = [n for n in nums if n == pivot]
         greater = [n for n in nums if n > pivot]
