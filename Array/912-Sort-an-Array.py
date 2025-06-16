@@ -18,8 +18,12 @@ class Solution_quick_sort_TLE:
 
         def partition(arr, low, high):
             pivot = arr[high] # Always select last element as pivot
-
+            # # If randomise pivot: (reduces average time complexity)
+            # index = randint(low, high)
+            # pivot = arr[index] # Always select last element as pivot
+            # arr[index], arr[high] = arr[high], arr[index]
             # Move all numbers smaller than pivot to the left side
+
             pivot_pointer = low - 1 # Virtually move pivot across array to find the correct position
 
             for i in range(low, high):
