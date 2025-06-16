@@ -1,6 +1,11 @@
 {
     "github.copilot.enable": {
-        "workspace": false
+        "*": true,
+        "plaintext": false,
+        "markdown": false,
+        "scminput": false,
+        "workspace": false,
+        "python": true
     },
     "github.copilot.editor.enableAutoCompletions": false
 }
