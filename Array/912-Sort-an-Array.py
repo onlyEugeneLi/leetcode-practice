@@ -68,6 +68,7 @@ class Solution_quick_sort:
 
         return self.sortArray(less) + equal + self.sortArray(greater)
 
+''' Divide and conquer'''
 class Solution_merge_sort:
     def sortArray(self, nums: List[int]) -> List[int]:
         ''' Sorting function '''
