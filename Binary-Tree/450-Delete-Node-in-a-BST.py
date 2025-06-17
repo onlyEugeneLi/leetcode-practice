@@ -20,6 +20,7 @@ class Solution:
         else: # Found the node! Current node value == key
             ''' Position of target node '''
             # Case 1: No either of child nodes
+                # Will also be used to delete leaf node that was used to replace target node
             if not root.left and not root.right:
                 return None
             # Case 2: No left child
