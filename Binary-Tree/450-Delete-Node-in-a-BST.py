@@ -18,6 +18,7 @@ class Solution:
         elif key > root.val: # Key must be on right subtree
             root.right = self.deleteNode(root.right, key) # Jump to next right child
         else: # Found the node! Current node value == key
+            ''' Position of target node '''
             # Case 1: No either of child nodes
             if not root.left and not root.right:
                 return None
