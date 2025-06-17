@@ -1,3 +1,13 @@
+'''
+must recursively update root.left or root.right during the deletion process
+
+target_node = self.dfs(root, key)
+...
+target_node = target_node.right
+
+If like above, You’re reassigning a local variable, not modifying the tree structure in-place. So the changes don’t reflect in the parent’s .left or .right
+'''
+
 class Solution:
     def deleteNode(self, root: TreeNode, key: int) -> TreeNode:
         if not root:
@@ -7,7 +17,7 @@ class Solution:
             root.left = self.deleteNode(root.left, key) # Jump to next left child
         elif key > root.val: # Key must be on right subtree
             root.right = self.deleteNode(root.right, key) # Jump to next right child
-        else: # Current node value == key
+        else: # Found the node! Current node value == key
             # Case 1: No either of child nodes
             if not root.left and not root.right:
                 return None
@@ -20,6 +30,9 @@ class Solution:
             # Case 4: Both child nodes exist
             # On right subtree, find its bottom left value 
             # to replace current value. 
+            # Smallest right subtree value > all left subtree values
+            # Smallest right subtree value < all right subtree values
+            # Thus, Binary search tree structure is still valid.
             # (Thus, Original deletion target is eliminated.)
             root.val = self.findMin(root.right)
             # Delete the duplicate of bottom left node. 
