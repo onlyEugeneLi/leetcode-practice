@@ -28,6 +28,13 @@ This space saves coding problem encountered from any coding assessment for learn
 1. Analyse time and space complexity before the interivewer asks you 
 1. Test your code (dry run)
 
+# Complexity Analysis
+
+Runtime improvement
+1. Less new variable creation
+1. Ealry exit on invalid input
+1. More specific `if` logic paths
+1. Avoid unnecessary checks
 
 # Algorithms
 
