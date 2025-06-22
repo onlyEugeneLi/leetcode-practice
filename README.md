@@ -112,3 +112,29 @@ n = 5
 print(fibo(n))
 # Console output: 5
 ```
+
+# Data Structures
+
+Basic operations: Add, Delete, Search, Modify
+
+## Stack
+
+LIFO array
+
+### ✅ When to Use a Stack
+
+| Category                           | Example Problems                                                                                                                            | Why Stack Works                                       |
+| ---------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------- |
+| **Balanced Symbols / Parentheses** | - Valid Parentheses (`"(()[]){}"`)<br>- HTML/XML tag matching                                                                               | Track opening symbols and match them in reverse order |
+| **String Manipulation**            | - Remove adjacent duplicates<br>- Decode strings (e.g., `"3[a2[c]]"` → `"accaccacc"`)<br>- Backspace string comparison (`"ab#c"`, `"ad#c"`) | Undo-like operations or structure preservation        |
+| **Backtracking**                   | - Maze / path traversal<br>- Undo operations                                                                                                | Stack holds states to backtrack to                    |
+| **Evaluation of Expressions**      | - Infix to postfix conversion<br>- Evaluate RPN (Reverse Polish Notation)                                                                   | Operators and operands are managed in LIFO order      |
+| **Tree/Graph Traversal**           | - Iterative DFS (Depth-First Search)<br>- Postorder traversal (without recursion)                                                           | Simulate recursion using a stack                      |
+| **History Tracking**               | - Browser back button<br>- Undo in text editor                                                                                              | Keep track of previous states                         |
+| **Monotonic Stack Problems**       | - Next Greater Element<br>- Stock Span<br>- Largest Rectangle in Histogram                                                                  | Maintain a stack of increasing/decreasing elements    |
+| **Recursive Simulation**           | - Convert recursive functions into iterative ones                                                                                           | Explicitly manage the call stack                      |
+| **Parsing Problems**               | - Parsing nested expressions or serialized structures                                                                                       | Manage nesting levels cleanly                         |
+
+
+### Monotonic stack
+
