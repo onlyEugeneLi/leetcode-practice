@@ -120,6 +120,10 @@ print(fibo(n))
 # Console output: 5
 ```
 
+## Hash Map
+
+`zip(*grid)`: transpose 2D-array -- combine i-th elements of every row into the same tuple
+
 # Data Structures
 
 Basic operations: Add, Delete, Search, Modify
