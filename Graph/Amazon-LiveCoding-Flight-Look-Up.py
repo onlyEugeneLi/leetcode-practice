@@ -48,7 +48,7 @@ def can_reach_within_k_stops(start, end, k):
             return True
         if stops == k:
             continue
-        for neighbor in graph[city]:
+        for neighbor in flights[city]:
             if (neighbor, stops + 1) not in visited:
                 visited.add((neighbor, stops + 1))
                 queue.append((neighbor, stops + 1))
