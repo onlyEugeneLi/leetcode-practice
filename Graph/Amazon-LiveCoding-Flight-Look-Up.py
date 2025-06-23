@@ -36,6 +36,8 @@ def has_direct_flight(source, destination):
 
 # 2. Can I get from city A to B within k max stops?
 
+from collections import deque
+
 def can_reach_within_k_stops(start, end, k):
     queue = deque([(start, 0)])  # (city, stops)
     visited = set()
