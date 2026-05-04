@@ -16,6 +16,42 @@
 # 
 # - How would you implement the solution?
 
+# Data structure to represent the flight connections
+
+# 1. Adjacency List (Hash Map → List / Set)
+# 2. Adjacency Matrix
+# 3. Edge List
+# 4. Graph with Weighted Edges
+# 6. Multi-Index Graph (Advanced / Production)
+
+# Interview guidance:
+
+# Interview Recommendation (Very Important)
+# Say this:
+
+# “I’ll start with an adjacency list using a dictionary of sets.
+# It’s optimal for sparse graphs and supports fast lookups and BFS-style queries.”
+
+# Then mention extensibility:
+
+# “If costs or constraints are needed, I’ll store metadata on edges.”
+
+# generalize this to exactly k stops
+
+# return shortest one-stop route
+
+# handle undirected flights
+
+# add cycle prevention
+
+# refactor your code to production-grade
+
+# add k-stop path enumeration
+
+# show Dijkstra on flights
+
+# simulate airline pricing
+
 flights = {
     "Seattle": ["Houston", "Dallas"],
     "Houston": ["New York City"],
@@ -54,5 +90,34 @@ def can_reach_within_k_stops(start, end, k):
                 queue.append((neighbor, stops + 1))
     
     return False
+
+# Post interview study:
+
+# 3. “Return one-stop routes only if no direct flight exists”
+
+def routes_via_one_city(start, end):
+    # If direct flight exists, return nothing
+    if end in flights.get(start, []):
+        return []
+
+    routes = []
+    for intermediate in flights.get(start, []):
+        if end in flights.get(intermediate, []):
+            routes.append([start, intermediate, end])
+
+    return routes
+
+
+# Interview Recommendation (Very Important)
+# Say this:
+
+# “I’ll start with an adjacency list using a dictionary of sets.
+# It’s optimal for sparse graphs and supports fast lookups and BFS-style queries.”
+
+# Then mention extensibility:
+
+# “If costs or constraints are needed, I’ll store metadata on edges.”
+
+
 
 
