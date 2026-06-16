@@ -1,0 +1,21 @@
+2026-06-15 22:44:09,657: WARNING: This is a warning message.
+2026-06-15 22:44:09,657: INFO: This is informative message
+2026-06-15 22:56:05,753: ERROR: Division error occurred
+Traceback (most recent call last):
+  File "/Users/maceugene/Documents/projects/leetcode-practice/SRE-coding-interview-questions/dev.py", line 12, in <module>
+    result = 10 / 0
+             ~~~^~~
+ZeroDivisionError: division by zero
+2026-06-15 22:56:05,755: ERROR: Division error
+Traceback (most recent call last):
+  File "/Users/maceugene/Documents/projects/leetcode-practice/SRE-coding-interview-questions/dev.py", line 12, in <module>
+    result = 10 / 0
+             ~~~^~~
+ZeroDivisionError: division by zero
+2026-06-15 23:47:35,123: ERROR: V1--Division error occurred
+Traceback (most recent call last):
+  File "/Users/maceugene/Documents/projects/leetcode-practice/SRE-coding-interview-questions/dev.py", line 12, in <module>
+    result = 10 / 0
+             ~~~^~~
+ZeroDivisionError: division by zero
+2026-06-15 23:47:35,125: ERROR: V2--Division error
