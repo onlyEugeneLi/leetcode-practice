@@ -28,7 +28,7 @@ def parse_cli_to_kwargs() -> Dict[str, Any]:
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
 _handler = logging.FileHandler("argparse.log")
-_handler.setFormatter(logging.Formatter("%(asctime)s: %(levelname)s: %(message)s"))
+_handler.setFormatter(logging.Formatter("%(asctime)s - %(name)s - %(levelname)s - %(message)s"))
 logger.addHandler(_handler)
 
 
