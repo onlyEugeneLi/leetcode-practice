@@ -35,14 +35,16 @@ logger.addHandler(_handler)
 VALID_CODES = {"200", "400", "404", "500"}
 
 def validate_inputs(kwargs: Dict[str, Any]) -> None:
+    errors = []
+
     if not kwargs.get("message"):
-        raise ValidationError(message="--message is required", code="400")
+        errors.append("--message is required or cannot be empty")
 
     if kwargs.get("code") not in VALID_CODES:
-        raise ValidationError(
-            message=f"Invalid code '{kwargs.get('code')}', must be one of {VALID_CODES}",
-            code="400"
-        )
+        errors.append(f"Invalid code '{kwargs.get('code')}', must be one of {VALID_CODES}")
+
+    if errors:
+        raise ValidationError(message=";\n".join(errors), code="400")
 
 def main():
     cli_kwarg = parse_cli_to_kwargs()
