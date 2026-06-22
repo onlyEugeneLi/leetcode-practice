@@ -45,3 +45,15 @@ Traceback (most recent call last):
 ValidationError: --message is required or cannot be empty;
 Invalid code '777', must be one of {'500', '404', '400', '200'}
 2026-06-16 01:07:09,818: INFO: Shutting down the process...
+2026-06-18 16:28:34,492 - __main__ - ERROR - Caught ValidationError!
+2026-06-18 16:28:34,493 - __main__ - ERROR - -> Code Attribute:    400
+2026-06-18 16:28:34,493 - __main__ - ERROR - -> Message Attribute: --message is required or cannot be empty;
+Invalid code 'None', must be one of {'404', '400', '500', '200'}
+Traceback (most recent call last):
+  File "/Users/maceugene/Documents/projects/leetcode-practice/SRE-coding-interview-questions/except.py", line 54, in main
+    validate_inputs(clean_kwargs)
+  File "/Users/maceugene/Documents/projects/leetcode-practice/SRE-coding-interview-questions/except.py", line 47, in validate_inputs
+    raise ValidationError(message=";\n".join(errors), code="400")
+ValidationError: --message is required or cannot be empty;
+Invalid code 'None', must be one of {'404', '400', '500', '200'}
+2026-06-18 16:28:34,495 - __main__ - INFO - Shutting down the process...
